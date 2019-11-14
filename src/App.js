@@ -5,8 +5,7 @@ import Films from "./components/Films";
 import Persons from "./components/Persons";
 import Welcome from "./components/Welcome"
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar, Nav} from "react-bootstrap";
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 class LogIn extends Component {
  constructor(props) {
@@ -42,8 +41,10 @@ class LoggedIn extends Component {
  render() {
    return (
      <div>
+       <Header />
        <h2>Data Received from server</h2>
        <h3>{this.state.dataFromServer}</h3>
+       <Content />
      </div>
    )
  }
@@ -67,8 +68,6 @@ class App extends Component {
          <Router>
            <div>
              <LoggedIn/>
-             <Header />
-             <Content />
              <button onClick={this.logout}>Logout</button>
            </div>
          </Router>)}
@@ -80,31 +79,27 @@ export default App;
 
 const Header = () => {
   return (
-      <div>
-        <Navbar bg="dark" variant="dark">
-          <Nav className="nav">
-            <NavLink exact to="/"> Welcome </NavLink>
-            <NavLink to="/planets"> Planets </NavLink>
-            <NavLink to="/persons"> Persons </NavLink>
-            <NavLink to="/films"> Films </NavLink>
-          </Nav>
-        </Navbar>
-      </div>
+    <ul className="header">
+      <li><NavLink exact activeClassName="active" to="/">Welcome</NavLink></li>
+      <li><NavLink activeClassName="active" to="/planets">Planets</NavLink></li>
+      <li><NavLink activeClassName="active" to="/persons">Persons</NavLink></li>
+      <li><NavLink activeClassName="active" to="/films">Films</NavLink></li>
+    </ul>
   );
 };
 
 const Content = () => {
   return (
-      <div>
+      
           <Switch>
               <Route exact path="/"> <Welcome /> </Route>
               <Route path="/planets"> <Planets /> </Route>
               <Route path="/persons"> <Persons /> </Route>
               <Route path="/films"> <Films /> </Route>
           </Switch>
-      </div>
-  );
-};
+      
+  )
+}
 
 
 
