@@ -5,7 +5,8 @@ import Films from "./components/Films";
 import Persons from "./components/Persons";
 import Welcome from "./components/Welcome"
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Navbar, Nav} from "react-bootstrap";
 
 class LogIn extends Component {
  constructor(props) {
@@ -79,12 +80,16 @@ export default App;
 
 const Header = () => {
   return (
-      <ul className="header">
-          <li><NavLink exact to="/">Welcome Page</NavLink></li>
-          <li><NavLink to="/planets">Planets</NavLink></li>
-          <li><NavLink to="/persons">Persons</NavLink></li>
-          <li><NavLink to="/films">Films</NavLink></li>
-      </ul>
+      <div>
+        <Navbar bg="dark" variant="dark">
+          <Nav className="nav">
+            <NavLink exact to="/"> Welcome </NavLink>
+            <NavLink to="/planets"> Planets </NavLink>
+            <NavLink to="/persons"> Persons </NavLink>
+            <NavLink to="/films"> Films </NavLink>
+          </Nav>
+        </Navbar>
+      </div>
   );
 };
 
@@ -100,4 +105,6 @@ const Content = () => {
       </div>
   );
 };
+
+
 
