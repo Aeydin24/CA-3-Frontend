@@ -6,7 +6,7 @@ import Persons from "./components/Persons";
 import Welcome from "./components/Welcome"
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 //import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css";
+import "./App.css";   
 
 class LogIn extends Component {
  constructor(props) {
