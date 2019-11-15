@@ -14,7 +14,7 @@ const Planets = () => {
     }
 
     fetchData();
-  });
+  },[]);
 
   return (
     <div>

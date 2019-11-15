@@ -14,7 +14,7 @@ const Persons = () => {
     }
 
     fetchData();
-  });
+  },[]);
 
   return (
     <div>

@@ -14,7 +14,7 @@ const Films = () => {
     }
 
     fetchData();
-  });
+  },[]);
 
   return (
     <div>
