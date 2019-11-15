@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {planetlist} from '../settings';
+import JSONPretty from 'react-json-pretty';
 
 const Planets = () => {
   const [hasError, setErrors] = useState(false);
@@ -19,7 +20,7 @@ const Planets = () => {
 
   return (
     <div>
-      <span><pre>{JSON.stringify(planets)}</pre></span>
+      <JSONPretty id="json-pretty" data={planets}></JSONPretty>
       <hr />
       <span>Has error: {JSON.stringify(hasError)}</span>
     </div>
