@@ -25,8 +25,8 @@ class LogIn extends Component {
      <div>
        <h2>Login</h2>
        <form onSubmit={this.login} onChange={this.onChange} >
-         <input placeholder="User Name" id="username" />
-         <input placeholder="Password" id="password" />
+         <input type="text" placeholder="User Name" id="username" required/>
+         <input type="password" placeholder="Password" id="password" required/>
          <button>Login</button>
        </form>
      </div>
