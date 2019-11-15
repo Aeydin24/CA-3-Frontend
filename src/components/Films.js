@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {filmlist} from '../settings';
 
 const Films = () => {
   const [hasError, setErrors] = useState(false);
@@ -6,7 +7,7 @@ const Films = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("https://swapi.co/api/films/2/");
+      const res = await fetch(filmlist);
       res
         .json()
         .then(res => setFilms(res))
@@ -18,7 +19,7 @@ const Films = () => {
 
   return (
     <div>
-      <span>{JSON.stringify(films)}</span>
+      <span><pre>{JSON.stringify(films)}</pre></span>
       <hr />
       <span>Has error: {JSON.stringify(hasError)}</span>
     </div>

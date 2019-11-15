@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {peoplelist} from '../settings';
 
 const Persons = () => {
   const [hasError, setErrors] = useState(false);
@@ -6,7 +7,7 @@ const Persons = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("https://swapi.co/api/people/1/");
+      const res = await fetch(peoplelist);
       res
         .json()
         .then(res => setPersons(res))
@@ -18,7 +19,7 @@ const Persons = () => {
 
   return (
     <div>
-      <span>{JSON.stringify(persons)}</span>
+      <span><pre>{JSON.stringify(persons)}</pre></span>
       <hr />
       <span>Has error: {JSON.stringify(hasError)}</span>
     </div>
